@@ -1,25 +1,18 @@
-import './style.scss'
+import './css/index.scss'
 
-class Bork {
-    // Property initializer syntax
+import Excel from '@components/excel/Excel';
+import Header from './components/header/Header';
+import Toolbar from './components/toolbar/Toolbar';
+import Formula from './components/formula/Formula';
+import Table from './components/table/Table';
 
-    instanceProperty = 'bork';
-    boundFunction = () => {
-        return this.instanceProperty;
-    };
+const excel = new Excel('#app', {
+    components: [
+        Header,
+        Toolbar,
+        Formula,
+        Table
+    ]
+});
 
-    // Static class properties
-
-    static staticProperty = 'babelIsCool';
-    static staticFunction = function() {
-        return Bork.staticProperty;
-    };
-}
-
-async function start() {
-    await Promise.resolve()
-}
-
-start();
-
-console.log('App is working...');
+excel.render();

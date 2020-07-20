@@ -1,0 +1,19 @@
+.excel {
+    &__toolbar {
+        border-bottom: 1px solid $color_gray;
+    }
+}
+
+.toolbar {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 20px;
+    }
+}

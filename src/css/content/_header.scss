@@ -1,0 +1,10 @@
+.excel {
+    &__header {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        border-bottom: 1px solid $color_gray;
+    }
+}

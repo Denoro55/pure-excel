@@ -1,0 +1,21 @@
+.excel {
+    &__formula {
+        border-bottom: 1px solid $color_gray;
+    }
+}
+
+.formula {
+    display: flex;
+    background-color: #fff;
+
+    &__left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $width_left;
+    }
+
+    &__right {
+        flex: 1;
+    }
+}

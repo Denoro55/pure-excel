@@ -1,0 +1,41 @@
+.row {
+    background-color: #fff;
+    display: flex;
+    height: 40px;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $width_left;
+        border: 1px solid $color_gray;
+    }
+
+    &__data {
+        display: flex;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $width_cell;
+    border: 1px solid $color_gray;
+    background-color: $color_gray_light;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $width_cell;
+    border: 1px solid $color_gray;
+}
