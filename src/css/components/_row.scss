@@ -2,8 +2,10 @@
     background-color: #fff;
     display: flex;
     height: 40px;
+    min-height: 20px;
 
     &__info {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -22,22 +24,4 @@
         justify-content: center;
         text-transform: uppercase;
     }
-}
-
-.column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $width_cell;
-    border: 1px solid $color_gray;
-    background-color: $color_gray_light;
-}
-
-.cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $width_cell;
-    border: 1px solid $color_gray;
-    background-color: #fff;
 }
