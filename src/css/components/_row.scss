@@ -7,6 +7,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
         width: $width_left;
         border: 1px solid $color_gray;
     }
@@ -38,4 +39,5 @@
     justify-content: center;
     width: $width_cell;
     border: 1px solid $color_gray;
+    background-color: #fff;
 }
