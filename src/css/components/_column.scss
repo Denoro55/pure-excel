@@ -1,0 +1,10 @@
+.column {
+    min-width: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $width_cell;
+    border: 1px solid $color_gray;
+    background-color: $color_gray_light;
+}
