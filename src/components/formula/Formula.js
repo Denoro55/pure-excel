@@ -3,6 +3,13 @@ import ExcelComponent from '@core/ExcelComponent';
 export default class Formula extends ExcelComponent {
     static className = 'excel__formula';
 
+    constructor($root) {
+        super($root, {
+            name: 'Formula',
+            listeners: ['input', 'click']
+        })
+    }
+
     toHtml() {
         return `
             <div class="formula">
@@ -14,5 +21,13 @@ export default class Formula extends ExcelComponent {
                 </div>
             </div>
         `;
+    }
+
+    onInput(event) {
+        console.log(this, event.target.value)
+    }
+
+    onClick(event) {
+        console.log('click')
     }
 }

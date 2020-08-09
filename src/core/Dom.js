@@ -13,6 +13,14 @@ class Dom {
         return this.$el.outerHTML
     }
 
+    on(eventType, fn) {
+        this.$el.addEventListener(eventType, fn);
+    }
+
+    off(eventType, fn) {
+        this.$el.removeEventListener(eventType, fn);
+    }
+
     append(node) {
         if (node instanceof Dom) {
             node = node.$el;
