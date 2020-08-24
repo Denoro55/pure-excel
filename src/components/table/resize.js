@@ -42,6 +42,7 @@ export default function resizeHandler($root, event) {
             'z-index': '',
             'transform': '',
             'bottom': '',
+            'right': '',
         });
         if (data.resize === 'col') {
             const index = $parent.data.col;

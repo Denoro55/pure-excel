@@ -3,10 +3,11 @@ import ExcelComponent from '@core/ExcelComponent';
 export default class Formula extends ExcelComponent {
     static className = 'excel__formula';
 
-    constructor($root) {
+    constructor($root, options) {
         super($root, {
             name: 'Formula',
-            listeners: ['input', 'click']
+            listeners: ['input', 'keydown'],
+            ...options
         })
     }
 
@@ -23,11 +24,23 @@ export default class Formula extends ExcelComponent {
         `;
     }
 
-    onInput(event) {
-        console.log(this, event.target.value)
+    init() {
+        super.init();
+
+        this.$formula = this.$root.find('input');
+        this.$on('table:select', $cell => {
+            console.log($cell.text(), this.$formula);
+            this.$formula.text($cell.text());
+        })
     }
 
-    onClick(event) {
-        console.log('click')
+    onInput(event) {
+        this.$emit('formula:input', event.target.value);
+    }
+
+    onKeydown(event) {
+        if (event.code === 'Enter') {
+            this.$emit('formula:done');
+        }
     }
 }

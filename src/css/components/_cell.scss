@@ -6,3 +6,8 @@
     border: 1px solid $color_gray;
     background-color: #fff;
 }
+
+.cell.selected {
+    position: relative;
+    outline: 2px solid $color_blue;
+}
