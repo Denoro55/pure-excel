@@ -29,12 +29,20 @@ function toColumn(char, index) {
     `
 }
 
-function toCell(_, index) {
-    return `
-        <div data-col="${index}" contenteditable="" class="cell">
-            
-        </div>
-    `
+function toCell(row) {
+    return function(_, index) {
+        return `
+            <div 
+                data-type="cell"
+                data-row="${row}" 
+                data-col="${index}" 
+                data-id="${row}:${index}"
+                contenteditable="" 
+                class="cell">
+                
+            </div>
+        `
+    }
 }
 
 function toChar(_, index) {
@@ -52,12 +60,12 @@ export default function createTable(rowsCount = 15) {
 
     rows.push(createRow(cols));
 
-    const cellsCols = new Array(CODES.Z - CODES.A + 1)
-        .fill('')
-        .map(toCell)
-        .join('');
-
     for (let i = 0; i < rowsCount; i++) {
+        const cellsCols = new Array(CODES.Z - CODES.A + 1)
+            .fill('')
+            .map(toCell(i))
+            .join('');
+
         rows.push(createRow(cellsCols, i + 1));
     }
 
